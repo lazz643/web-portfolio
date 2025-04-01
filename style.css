@@ -372,6 +372,7 @@ footer {
   border-radius: 8px;
   border: 1px solid white;
   color: white;
+  text-decoration: none;
 }
 .btnGallery:hover {
   background-color: white;
