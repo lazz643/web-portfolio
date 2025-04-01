@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header id="home">
+      <div class="container">
+        <div class="boxNav">
+          <div class="navbar">
+            <ul class="ulWeb">
+              <li>
+                <a href="#home" id="nav-home" class="btnNav text-basic">Home</a>
+              </li>
+              <li>
+                <a href="#about" id="nav-about" class="btnNav text-basic">About</a>
+              </li>
+              <li>
+                <a href="#quality" id="nav-quality" class="btnNav text-basic">Quality</a>
+              </li>
+              <li>
+                <a href="#skills" id="nav-skills" class="btnNav text-basic">Skills</a>
+              </li>
+              <li>
+                <a href="#portfolio" id="nav-portfolio" class="btnNav text-basic">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact" id="nav-contact" class="btnNav text-basic">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbarMobile">
+            <div class="boxNavMobile">
+              <button id="togleMenu" class="btnBurger">
+                <i class="fa-solid fa-bars"></i>
+              </button>
+              <ul id="extendMenu" class="ulMobile active">
+                <li>
+                  <a href="#home" id="nav2-home" class="btnNav text-basic">Home</a>
+                </li>
+                <li>
+                  <a href="#about" id="nav2-about" class="btnNav text-basic">About</a>
+                </li>
+                <li>
+                  <a href="#quality" id="nav2-quality" class="btnNav text-basic">Quality</a>
+                </li>
+                <li>
+                  <a href="#skills" id="nav2-skills" class="btnNav text-basic">Skills</a>
+                </li>
+                <li>
+                  <a href="#portfolio" id="nav2-portfolio" class="btnNav text-basic">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#contact" id="nav2-contact" class="btnNav text-basic">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="boxHeader">
+          <div class="boxProfile1">
+            <div class="boxImage">
+              <img src="./img/profil.jpg" alt="Profile" fill class="imgProfile" />
+            </div>
+          </div>
+          <div class="boxProfile2">
+            <span class="name1">I'am</span>
+            <span class="name2">LAZZUARDI SHOLEHUDDIN</span>
+            <span class="name3">Software Developer</span>
+
+            <div class="boxItem">
+              <button class="btnCv text-basic">Download CV</button>
+              <div class="boxItemSosmed">
+                <button class="btnSosmed">
+                  <i class="fa-brands fa-instagram"></i>
+                </button>
+                <button class="btnSosmed">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </button>
+                <button class="btnSosmed">
+                  <i class="fa-regular fa-envelope"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <script>
+      let togleMenu = document.getElementById("togleMenu");
+      let target = document.getElementById("extendMenu");
+
+      togleMenu.addEventListener("click", () => {
+        target.classList.toggle("activeMenu");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let sectionTarget = document.body.querySelectorAll("header, section, footer");
+        let btnNav = document.querySelectorAll(".btnNav");
+
+        function navColorChange() {
+          let scrollY = window.scrollY;
+          sectionTarget.forEach((section) => {
+            let sectionCoordinatY = section.offsetTop - 30;
+            let sectionHeight = section.offsetHeight;
+            let sectionId = section.getAttribute("id");
+
+            if (scrollY >= sectionCoordinatY && scrollY <= sectionCoordinatY + sectionHeight) {
+              btnNav.forEach((style) => {
+                style.classList.remove("active");
+              });
+              document.querySelector(`#nav-${sectionId}`)?.classList.add("active");
+              document.querySelector(`#nav2-${sectionId}`)?.classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", navColorChange);
+      });
+    </script>
+
+    <section id="about">
+      <div class="boxAbout">
+        <div class="boxTitle">
+          <span class="title1">ABOUT</span>
+          <div class="title2">About Me</div>
+        </div>
+        <div class="boxDesc">
+          <div class="boxDescImg">
+            <img src="./img/profil.jpg" alt="imgAbout" style="object-fit: cover; width: 100%; height: 100%" />
+          </div>
+          <div class="desc">
+            <span class="text-v3" style="font-weight: bold; line-height: 1">Software Developer</span>
+            <p class="text-basic" style="color: gray">
+              Computer Engineering graduate from Telkom University (2024) with experience in software development, system integration, and data management. Skilled in frontend and backend development, with expertise in artificial
+              intelligence. Improved data processing efficiency by 87.5% in a soil stiffness measurement application by reducing processing time from 4 seconds to 0.5 seconds. Passionate about leveraging technical expertise to develop
+              impactful software solutions.
+            </p>
+            <div class="descDetail">
+              <span class="text-basic"><span style="color: rgb(47, 47, 47)">Name:</span> Lazzuardi Sholehuddin Nursuhud</span>
+              <span class="text-basic"><span style="color: rgb(47, 47, 47)">Birthday:</span> 20 March 2000</span>
+              <span class="text-basic"><span style="color: rgb(47, 47, 47)">Phone:</span> 08111111111</span>
+              <spam class="text-basic"><span style="color: rgb(47, 47, 47)">Email:</span> lazzuardi.643@gmail.com</spam>
+              <span class="text-basic"><span style="color: rgb(47, 47, 47)">Freelance:</span> Alvailable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quality">
+      <div class="boxExperience">
+        <div class="boxTitle">
+          <span class="title1">QUALITY</span>
+          <div class="title2">Education & Experience</div>
+        </div>
+        <div class="boxGrid">
+          <div class="education">
+            <span class="text-v2" style="font-weight: bold">My Education</span>
+            <div class="education2">
+              <div class="timeline">
+                <div class="eduValue">
+                  <span class="text-basic" style="font-weight: bold">Dibimbing</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Bootcamp in Website Development <span style="font-weight: 500"> | january 2025 - present</span></span>
+                  <span class="text-basic" style="color: gray; margin-top: 8px">Deepening self-competence and practice in the React framework for website development.</span>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="eduValue">
+                  <span class="text-basic" style="font-weight: bold">MySkill</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Bootcamp in UI/UX Design <span style="font-weight: 500"> | November - December 2024 </span></span>
+                  <span class="text-basic" style="color: gray; margin-top: 8px">Deepening self-competence and practice as a UI/UX designer in a mobile application revamp project.</span>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="eduValue">
+                  <span class="text-basic" style="font-weight: bold">Telkom University</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Bachelor’s Degree in Computer Engineering<span style="font-weight: 500"> | GPA : 3.79 of 4.00 | 2020 - 2024 </span></span>
+                  <span class="text-basic" style="color: gray; margin-top: 8px">Final Project : Development of a Token Purchase Application for Prepaid Water Meters.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="experience">
+            <span class="text-v2" style="font-weight: bold">My Experience</span>
+            <div class="experience2">
+              <div class="timeline">
+                <div class="expValue">
+                  <span class="text-basic" style="font-weight: bold">Freelance Web Developer</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">IEEE SPS INDONESIA CHAPTER<span style="font-weight: 500"> | February - February 2025 </span></span>
+                  <p class="text-basic" style="color: gray; margin-top: 8px">
+                    Developed and managed the IEEE SPS Indonesia Chapter website using WordPress. Responsible for the design, development, and maintenance of the website to support the publication of events, conferences, and technical and
+                    educational activities.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="expValue">
+                  <span class="text-basic" style="font-weight: bold">Contract Software Developer – Light Weight Deflectometer Project</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Ministry of Public Works and Housing (PUPR)<span style="font-weight: 500"> | August - December 2024 </span></span>
+                  <p class="text-basic" style="color: gray; margin-top: 8px">
+                    Developed the frontend and backend for a Light Weight Deflectometer (LWD) application to measure soil stiffness, improving data processing speed by 87.5%, and implemented real-time Bluetooth data transfer from the LWD
+                    for seamless in-app analysis.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="expValue">
+                  <span class="text-basic" style="font-weight: bold">Laboratory Assistant – Intelligent System & Machine Learning Lab</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Telkom University<span style="font-weight: 500"> | March 2023 - March 2024</span></span>
+                  <p class="text-basic" style="color: gray; margin-top: 8px">
+                    Assisted in Artificial Intelligence course practices for 50+ students, guiding them in machine learning model implementation and ensuring a 90%+ assignment completion rate, and led study groups focusing on computer
+                    vision (Object Detection)
+                  </p>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="expValue">
+                  <span class="text-basic" style="font-weight: bold">Research Assistant – Prepaid Water Meter Project (STS Tokens & Web)</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">Kedaireka 2023 & Regional Water Utility (PDAM)<span style="font-weight: 500"> | June - December 2023 </span></span>
+                  <p class="text-basic" style="color: gray; margin-top: 8px">
+                    Developed a token generation system for prepaid water meters using STS (Standard Transfer Specification), developed the website for testing the token purchasing process, and collaborated with a team of 25+ experts,
+                    including members from BRIN, to enhance secure digital transactions in smart utilities.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline">
+                <div class="expValue">
+                  <span class="text-basic" style="font-weight: bold">IT Security Operations Intern</span>
+                  <span class="text-min" style="font-size: 14px; color: gray; font-weight: bold">PT Kereta Api Indonesia (Persero)<span style="font-weight: 500"> | July - August 2023 </span></span>
+                  <p class="text-basic" style="color: gray; margin-top: 8px">
+                    Designed network topology using SolarWinds Network Application for infrastructure monitoring, conducted network device configuration and troubleshooting to optimize performance, and performed cable pulling and crimping
+                    for 50+ meters of network infrastructure, improving connectivity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="boxSkills">
+        <div class="boxTitle">
+          <span class="title1">SKILLS</span>
+          <div class="title2">My Skills</div>
+        </div>
+        <div class="boxGrid">
+          <div class="hardSkills">
+            <span class="text-v2" style="font-weight: bold">My Hardskills</span>
+            <div class="hardSkills2">
+              <div class="hardValue text-basic">JavaScript</div>
+              <div class="hardValue text-basic">React Native</div>
+              <div class="hardValue text-basic">Laravel</div>
+              <div class="hardValue text-basic">PHP</div>
+              <div class="hardValue text-basic">Microsoft Office</div>
+              <div class="hardValue text-basic">MySQL</div>
+            </div>
+          </div>
+          <div class="softSkills">
+            <span class="text-v2" style="font-weight: bold">My Softskills</span>
+            <div class="softSkills2">
+              <div class="softValue text-basic">Teamwork</div>
+              <div class="softValue text-basic">Collaboration</div>
+              <div class="softValue text-basic">Time Management</div>
+              <div class="softValue text-basic">Disciplin</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="boxPortfolio">
+        <div class="boxTitle">
+          <span class="title1">GALLERY</span>
+          <div class="title2">My Portfolio</div>
+        </div>
+        <div class="boxGallery">
+          <div class="galleryItem">
+            <img src="/img/p1.png" alt="item 1" fill style="object-fit: cover; width: 100%; height: 100%" />
+            <div class="galleryHover">
+              <h3 style="color: white; text-align: center">Prepaid Water Meter Research with PDAM</h3>
+              <button class="btnGallery">view Detail</button>
+            </div>
+          </div>
+          <div class="galleryItem">
+            <img src="/img/p2.png" alt="item 1" fill style="object-fit: contain; width: 100%; height: 100%" />
+            <div class="galleryHover">
+              <h3 style="color: white; text-align: center">Measure Soil Stiffness App Research with PUPR</h3>
+              <button class="btnGallery">view Detail</button>
+            </div>
+          </div>
+          <div class="galleryItem">
+            <img src="/img/p3.png" alt="item 1" fill style="object-fit: cover; width: 100%; height: 100%" />
+            <div class="galleryHover">
+              <h3 style="color: white; text-align: center">Website for Documenting the Activities of the IEEE SPS Indonesia Chapter.</h3>
+              <button class="btnGallery">view Detail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="boxContact">
+        <div class="boxTitle">
+          <span class="title1">CONTACT</span>
+          <div class="title2">Contact Me</div>
+        </div>
+        <form class="boxForm">
+          <input type="text" name="name" id="inputName" placeholder="Your Name" style="width: 48%" />
+          <input type="email" name="email" id="inputEmail" placeholder="Your Email" style="width: 48%" />
+          <input type="text" name="subject" id="inputSubject" placeholder="Subject" style="width: 100%" />
+          <textarea name="message" id="inputMessage" placeholder="Message" rows="4" style="width: 100%"></textarea>
+          <submit type="submit" class="btnSubmit text-basic">Submit</submit>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="boxFooter">
+        <span class="text-basic" style="color: white; text-align: center">© Portfolio_Lazz. All Rights Reserved. Designed by Lazz.643</span>
+        <div class="boxItemSosmed">
+          <button class="btnSosmed">
+            <i class="fa-brands fa-instagram"></i>
+          </button>
+          <button class="btnSosmed">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </button>
+          <button class="btnSosmed">
+            <i class="fa-brands fa-telegram"></i>
+          </button>
+          <button class="btnSosmed">
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
