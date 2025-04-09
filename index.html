@@ -3,65 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Portfolio Lazzuardi</title>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <div class="navbar">
+      <ul class="ulWeb">
+        <li>
+          <a href="#home" id="nav-home" class="btnNav text-basic">Home</a>
+        </li>
+        <li>
+          <a href="#about" id="nav-about" class="btnNav text-basic">About</a>
+        </li>
+        <li>
+          <a href="#quality" id="nav-quality" class="btnNav text-basic">Quality</a>
+        </li>
+        <li>
+          <a href="#skills" id="nav-skills" class="btnNav text-basic">Skills</a>
+        </li>
+        <li>
+          <a href="#portfolio" id="nav-portfolio" class="btnNav text-basic">Portfolio</a>
+        </li>
+        <li>
+          <a href="#contact" id="nav-contact" class="btnNav text-basic">Contact</a>
+        </li>
+      </ul>
+    </div>
+    <div class="navbarMobile">
+      <div class="boxNavMobile">
+        <button id="togleMenu" class="btnBurger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <ul id="extendMenu" class="ulMobile active">
+          <li>
+            <a href="#home" id="nav2-home" class="btnNav text-basic">Home</a>
+          </li>
+          <li>
+            <a href="#about" id="nav2-about" class="btnNav text-basic">About</a>
+          </li>
+          <li>
+            <a href="#quality" id="nav2-quality" class="btnNav text-basic">Quality</a>
+          </li>
+          <li>
+            <a href="#skills" id="nav2-skills" class="btnNav text-basic">Skills</a>
+          </li>
+          <li>
+            <a href="#portfolio" id="nav2-portfolio" class="btnNav text-basic">Portfolio</a>
+          </li>
+          <li>
+            <a href="#contact" id="nav2-contact" class="btnNav text-basic">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <header id="home">
       <div class="container">
-        <div class="boxNav">
-          <div class="navbar">
-            <ul class="ulWeb">
-              <li>
-                <a href="#home" id="nav-home" class="btnNav text-basic">Home</a>
-              </li>
-              <li>
-                <a href="#about" id="nav-about" class="btnNav text-basic">About</a>
-              </li>
-              <li>
-                <a href="#quality" id="nav-quality" class="btnNav text-basic">Quality</a>
-              </li>
-              <li>
-                <a href="#skills" id="nav-skills" class="btnNav text-basic">Skills</a>
-              </li>
-              <li>
-                <a href="#portfolio" id="nav-portfolio" class="btnNav text-basic">Portfolio</a>
-              </li>
-              <li>
-                <a href="#contact" id="nav-contact" class="btnNav text-basic">Contact</a>
-              </li>
-            </ul>
-          </div>
-          <div class="navbarMobile">
-            <div class="boxNavMobile">
-              <button id="togleMenu" class="btnBurger">
-                <i class="fa-solid fa-bars"></i>
-              </button>
-              <ul id="extendMenu" class="ulMobile active">
-                <li>
-                  <a href="#home" id="nav2-home" class="btnNav text-basic">Home</a>
-                </li>
-                <li>
-                  <a href="#about" id="nav2-about" class="btnNav text-basic">About</a>
-                </li>
-                <li>
-                  <a href="#quality" id="nav2-quality" class="btnNav text-basic">Quality</a>
-                </li>
-                <li>
-                  <a href="#skills" id="nav2-skills" class="btnNav text-basic">Skills</a>
-                </li>
-                <li>
-                  <a href="#portfolio" id="nav2-portfolio" class="btnNav text-basic">Portfolio</a>
-                </li>
-                <li>
-                  <a href="#contact" id="nav2-contact" class="btnNav text-basic">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <div class="boxHeader">
           <div class="boxProfile1">
             <div class="boxImage">
@@ -70,9 +69,8 @@
           </div>
           <div class="boxProfile2">
             <span class="name1">I'am</span>
-            <span class="name2">LAZZUARDI SHOLEHUDDIN</span>
+            <span class="name2">LAZZUARDI<br />SHOLEHUDDIN<br />NURSUHUD</span>
             <span class="name3">Software Developer</span>
-
             <div class="boxItem">
               <button class="btnCv text-basic">Download CV</button>
               <div class="boxItemSosmed">
@@ -107,7 +105,7 @@
         function navColorChange() {
           let scrollY = window.scrollY;
           sectionTarget.forEach((section) => {
-            let sectionCoordinatY = section.offsetTop - 30;
+            let sectionCoordinatY = section.offsetTop - 100;
             let sectionHeight = section.offsetHeight;
             let sectionId = section.getAttribute("id");
 

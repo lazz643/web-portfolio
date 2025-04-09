@@ -12,7 +12,7 @@ section {
   margin-top: 80px;
 }
 footer {
-  margin-top: 80px;
+  margin-top: 160px;
 }
 
 .text-min {
@@ -29,21 +29,22 @@ footer {
 }
 
 .container {
-  height: 100vh;
+  min-height: calc(100vh - 56px);
+  max-height: max-content;
   background-color: rgba(11, 206, 175, 1);
   display: flex;
   flex-direction: column;
-}
-.boxNav {
-  flex: 1;
+  justify-content: center;
 }
 .navbar {
   background-color: rgba(255, 255, 255, 1);
   width: 100%;
-  padding: 22px 40px;
+  height: 56px;
+  padding: 0px 40px;
   display: flex;
   justify-content: center;
-  position: fixed;
+  align-items: center;
+  position: sticky;
   top: 0;
   z-index: 50;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -53,14 +54,15 @@ footer {
   width: 100%;
   display: none;
   flex-direction: column;
-  position: fixed;
+  position: sticky;
   top: 0;
   z-index: 50;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .boxNavMobile {
   position: relative;
-  padding: 6px 30px;
+  padding: 0px 30px;
+  height: 42px;
   display: flex;
   justify-content: end;
 }
@@ -114,7 +116,6 @@ footer {
   color: rgba(11, 206, 175, 1);
 }
 .boxHeader {
-  flex: 9;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -125,6 +126,7 @@ footer {
   flex: 1;
   align-items: center;
   justify-content: center;
+  padding: 12px 0px;
 }
 .boxImage {
   width: 56vh;
@@ -438,21 +440,12 @@ footer {
     margin-top: 80px;
   }
 
-  .text-min {
-    font-size: 12px;
+  .container {
+    min-height: calc(100vh - 50px);
   }
-  .text-basic {
-    font-size: 14px;
-  }
-  .text-v2 {
-    font-size: 22px;
-  }
-  .text-v3 {
-    font-size: 30px;
-  }
-
   .navbar {
-    padding: 18px 40px;
+    padding: 0px 40px;
+    height: 50px;
   }
   .boxHeader {
     flex-direction: column;
@@ -464,6 +457,15 @@ footer {
   .boxProfile2 {
     padding: 36px 0px;
     gap: 12px;
+  }
+  .name1 {
+    font-size: 12px;
+  }
+  .name2 {
+    font-size: 52px;
+  }
+  .name3 {
+    font-size: 24px;
   }
   .boxItem {
     margin-top: 20px;
@@ -510,9 +512,29 @@ footer {
     padding: 0px 70px;
     margin-top: 60px;
   }
+  footer {
+    margin-top: 180px;
+  }
 
+  .text-min {
+    font-size: 12px;
+  }
+  .text-basic {
+    font-size: 14px;
+  }
+  .text-v2 {
+    font-size: 22px;
+  }
+  .text-v3 {
+    font-size: 30px;
+  }
+
+  .container {
+    min-height: calc(100vh - 46px);
+  }
   .navbar {
-    padding: 16px 28px;
+    padding: 0px 28px;
+    height: 46px;
   }
   .boxHeader {
     padding: 0px 40px;
@@ -584,20 +606,13 @@ footer {
     padding: 0px 30px;
     margin-top: 50px;
   }
-
-  .text-min {
-    font-size: 10px;
-  }
-  .text-basic {
-    font-size: 12px;
-  }
-  .text-v2 {
-    font-size: 20px;
-  }
-  .text-v3 {
-    font-size: 28px;
+  footer {
+    margin-top: 220px;
   }
 
+  .container {
+    min-height: calc(100vh - 42px);
+  }
   .navbar {
     display: none;
   }
@@ -606,9 +621,6 @@ footer {
   }
   .boxHeader {
     padding: 0px 26px;
-  }
-  .name1 {
-    font-size: 8px;
   }
   .name2 {
     font-size: 36px;
