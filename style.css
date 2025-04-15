@@ -4,15 +4,90 @@
   box-sizing: border-box;
   font-family: poppins;
 }
+:root {
+  --primary-color: rgba(11, 206, 175, 1);
+  --item-color: rgb(225, 225, 225);
+  --primary-text: rgb(99, 99, 99);
+}
 html {
   scroll-behavior: smooth;
 }
 section {
   padding: 0px 240px;
-  margin-top: 80px;
+  margin-top: 100px;
 }
 footer {
   margin-top: 160px;
+}
+
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.motionSlideDown.animate {
+  animation: slideInDown 1s ease both;
+}
+.motionSlideUp.animate {
+  animation: slideInUp 1s ease both;
+}
+.motionSlideRight.animate {
+  animation: slideInRight 1s ease both;
+}
+.motionSlideLeft.animate {
+  animation: slideInLeft 1s ease both;
+}
+.motionZoomIn.animate {
+  animation: zoomIn 1s ease both;
+}
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .text-min {
@@ -28,10 +103,14 @@ footer {
   font-size: 32px;
 }
 
+.text-primary {
+  color: var(--primary-text);
+}
+
 .container {
   min-height: calc(100vh - 56px);
   max-height: max-content;
-  background-color: rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,7 +151,7 @@ footer {
   font-size: 20px;
   border: none;
   border-radius: 8px;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
 }
 .ulWeb {
   display: flex;
@@ -110,10 +189,7 @@ footer {
   font-weight: 600;
 }
 .btnNav.active {
-  color: rgba(11, 206, 175, 1);
-}
-.btnNav:hover {
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
 }
 .boxHeader {
   display: flex;
@@ -178,10 +254,13 @@ footer {
   border-radius: 40px;
   color: white;
   cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 .btnCv:hover {
   background-color: white;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
 }
 .boxItemSosmed {
   display: flex;
@@ -190,16 +269,19 @@ footer {
 .btnSosmed {
   height: 48px;
   aspect-ratio: 1/1;
-  font-size: 20px;
   border: 1px solid white;
   border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
   color: white;
-  background-color: rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
   cursor: pointer;
 }
 .btnSosmed:hover {
   background-color: white;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
 }
 
 .boxAbout,
@@ -224,7 +306,7 @@ footer {
 .title2 {
   font-size: 40px;
   font-weight: 600;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
   position: absolute;
   height: 100%;
   display: flex;
@@ -236,9 +318,21 @@ footer {
 }
 .boxDescImg {
   flex: 1;
+  display: flex;
+  height: 542px;
+  flex-direction: column;
+  gap: 8px;
+}
+.imgAbout {
+  flex: 1;
+  width: 100%;
   border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+}
+.img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .desc {
   flex: 1.4;
@@ -247,18 +341,37 @@ footer {
   padding: 0px 8px;
   gap: 18px;
 }
-.descDetail {
+.listHardSkill {
+  margin-top: 32px;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  color: gray;
-  font-size: 18px;
+  gap: 16px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.itemHardSkill {
+  aspect-ratio: 1/1;
+  width: 70px;
+  background-color: var(--item-color);
+  border-radius: 8px;
+  padding: 12px 12px;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.itemHardSkill:hover {
+  transform: scale(1.06);
+  background-color: rgba(11, 206, 175, 0.2);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+}
+.imageSkill {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .boxGrid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 48px;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 32px;
 }
 .education,
 .experience,
@@ -272,8 +385,16 @@ footer {
 .hardSkills2,
 .softSkills2 {
   display: flex;
+  padding: 0px 8px;
   flex-direction: column;
   margin-top: 24px;
+}
+.education2,
+.experience2 {
+  background-color: rgba(11, 206, 175, 0.07);
+  border-radius: 8px;
+  height: 500px;
+  overflow-y: auto;
 }
 .hardSkills2,
 .softSkills2 {
@@ -293,7 +414,7 @@ footer {
   left: 10px;
   width: 2px;
   height: 100%;
-  background-color: rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
 }
 .eduValue,
 .expValue {
@@ -310,8 +431,8 @@ footer {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background-color: rgba(11, 206, 175, 1);
-  outline: 2px solid rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
+  outline: 2px solid var(--primary-color);
   outline-offset: 4px;
 }
 
@@ -330,8 +451,8 @@ footer {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background-color: rgba(11, 206, 175, 1);
-  outline: 2px solid rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
+  outline: 2px solid var(--primary-color);
   outline-offset: 4px;
 }
 
@@ -343,7 +464,7 @@ footer {
 .galleryItem {
   height: 250px;
   border-radius: 8px;
-  background-color: rgb(225, 225, 225);
+  background-color: var(--item-color);
   position: relative;
   overflow: hidden;
 }
@@ -353,7 +474,7 @@ footer {
   top: 0;
   height: 250px;
   width: 100%;
-  background-color: rgba(11, 206, 175, 0.8);
+  background-color: rgba(11, 206, 175, 0.9);
   display: flex;
   flex-direction: column;
   padding: 0px 42px;
@@ -378,14 +499,13 @@ footer {
 }
 .btnGallery:hover {
   background-color: white;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
 }
 
 .boxForm {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 24px;
   padding: 0px 154px;
 }
 .boxForm input,
@@ -394,25 +514,29 @@ footer {
   background-color: white;
   border: 2px solid rgb(225, 225, 225);
   border-radius: 32px;
+  margin-bottom: 24px;
 }
 .btnSubmit {
   padding: 8px 32px;
-  border: 2px solid rgba(11, 206, 175, 1);
+  border: 2px solid var(--primary-color);
+  background-color: white;
   border-radius: 32px;
-  color: rgba(11, 206, 175, 1);
+  color: var(--primary-color);
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
 .btnSubmit:hover {
-  background-color: rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
   color: white;
 }
 
 .boxFooter {
-  background-color: rgba(11, 206, 175, 1);
+  background-color: var(--primary-color);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
   padding: 22px 120px;
   align-items: center;
 }
@@ -475,6 +599,9 @@ footer {
     flex-direction: column;
     gap: 42px;
   }
+  .boxDescImg {
+    max-height: 700px;
+  }
   .title1 {
     font-size: 100px;
   }
@@ -493,7 +620,6 @@ footer {
   }
 
   .boxForm {
-    gap: 24px;
     padding: 0px 54px;
   }
   .boxForm input,
@@ -578,7 +704,6 @@ footer {
   }
 
   .boxForm {
-    gap: 24px;
     padding: 0px 54px;
   }
   .boxForm input,
@@ -589,8 +714,6 @@ footer {
 
   .boxFooter {
     padding: 22px 40px;
-    flex-direction: column;
-    gap: 22px;
   }
 }
 
@@ -638,7 +761,6 @@ footer {
   }
   .btnSosmed {
     height: 36px;
-    font-size: 14px;
   }
 
   .title1 {
@@ -649,13 +771,13 @@ footer {
   }
 
   .boxForm {
-    gap: 20px;
     padding: 0px 34px;
   }
   .boxForm input,
   .boxForm textarea {
     padding: 10px;
     border-radius: 20px;
+    margin-bottom: 20px;
   }
 
   .boxFooter {
